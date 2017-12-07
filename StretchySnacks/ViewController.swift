@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var navBarHeight: NSLayoutConstraint!
     @IBOutlet weak var navBarView: UIView!
     @IBOutlet weak var addBtn: UIButton!
@@ -57,18 +57,43 @@ class ViewController: UIViewController {
         let image1 = UIImageView.init(image: UIImage.init(named: "oreos"))
         image1.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image1.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(image1Tabbed))
+        image1.isUserInteractionEnabled = true
+        image1.addGestureRecognizer(tap1)
+        
+        
         let image2 = UIImageView.init(image: UIImage.init(named: "pizza_pockets"))
         image2.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image2.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(image2Tabbed))
+        image2.isUserInteractionEnabled = true
+        image2.addGestureRecognizer(tap2)
+        
         let image3 = UIImageView.init(image: UIImage.init(named: "pop_tarts"))
         image3.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image3.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(image3Tabbed))
+        image3.isUserInteractionEnabled = true
+        image3.addGestureRecognizer(tap3)
+        
         let image4 = UIImageView.init(image: UIImage.init(named: "popsicle"))
         image4.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image4.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(image4Tabbed))
+        image4.isUserInteractionEnabled = true
+        image4.addGestureRecognizer(tap4)
+        
         let image5 = UIImageView.init(image: UIImage.init(named: "ramen"))
         image5.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image5.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let tap5 = UITapGestureRecognizer(target: self, action: #selector(image5Tabbed))
+        image5.isUserInteractionEnabled = true
+        image5.addGestureRecognizer(tap5)
         
         let imageArray = [image1, image2, image3, image4, image5]
         
@@ -84,9 +109,34 @@ class ViewController: UIViewController {
         stackView.bottomAnchor.constraint(equalTo: navBarView.bottomAnchor).isActive = true
         stackView.leadingAnchor.constraint(lessThanOrEqualTo: navBarView.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(lessThanOrEqualTo: navBarView.trailingAnchor).isActive = true
-
         
     }
+    
+    @objc func image1Tabbed () {
+        print ("tapped image1")
+        
+    }
+    
+    @objc func image2Tabbed () {
+        print ("tapped image2")
+        
+    }
+    
+    @objc func image3Tabbed () {
+        print ("tapped image3")
+        
+    }
+    
+    @objc func image4Tabbed () {
+        print ("tapped image4")
+        
+    }
+    
+    @objc func image5Tabbed () {
+        print ("tapped image5")
+        
+    }
+    
     
 }
 
